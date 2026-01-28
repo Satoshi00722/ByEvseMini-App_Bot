@@ -21,6 +21,12 @@ def start(message):
         "🛡 Оплата только после проверки функционала\n\n"
         "👇 Открой каталог и выбери услугу"
     )
-    bot.send_message(message.chat.id, text)
+
+    with open("welcome.jpg", "rb") as photo:
+        bot.send_photo(
+            chat_id=message.chat.id,
+            photo=photo,
+            caption=text
+        )
 
 bot.infinity_polling()
